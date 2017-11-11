@@ -55,6 +55,10 @@
   },
   "defaults": {
     "styleExt": "less",
-    "component": {}
+    "component": {
+    },
+    "serve": {
+      "port": 9999
+    }
   }
 }

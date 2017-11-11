@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, CompilerOptions } from '@angular/core';
+import { CompilerConfig } from '@angular/compiler/src/config';
+import { DxDataGridComponent } from 'devextreme-angular';
+import { Logger } from './logger.service';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +11,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  dxDataGridComponent: DxDataGridComponent
+  constructor(private logger: Logger) {
+    this.logger.log('something');
+  }
 }
