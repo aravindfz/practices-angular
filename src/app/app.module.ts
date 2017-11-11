@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { RouterModule, Router } from '@angular/router';
 import { CommonModule, getLocaleCurrencySymbol } from '@angular/common';
 import { LOCALE_ID } from '@angular/core';
-import * as fr from '@angular/common/locales/gv'
+import * as fr from '@angular/common/locales/gv';
 import { Logger } from './logger.service';
 
 @NgModule({
@@ -30,7 +30,7 @@ export class AppModule {
 
   constructor(private logger: Logger) {
     this.logger.log(fr.default);
-    let a = Object.values(fr.default)[0]
+    const a = Object.values(fr.default)[0];
     this.logger.log('frrrrrrrrrr  ', fr.default);
     this.logger.log(a);
     this.logger.log(getLocaleCurrencySymbol(navigator.language));

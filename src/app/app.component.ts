@@ -12,7 +12,7 @@ import { Logger } from './logger.service';
 export class AppComponent {
   title = 'app';
 
-  dxDataGridComponent: DxDataGridComponent
+  dxDataGridComponent: DxDataGridComponent;
   constructor(private logger: Logger) {
     this.logger.log('something');
   }
