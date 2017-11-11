@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import * as _ from 'lodash'
-import { UrlSerializer } from '@angular/router';
+import { UrlSerializer, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Injectable()
 export class Logger {
@@ -11,9 +12,9 @@ export class Logger {
       this.isDevMode = params.get('devMode') === 'true' ? true : false;
     }
   }
-  log(message: any) {
+  log(message: any | object, ...optionalParams: any[]) {
     if (this.isDevMode) {
-      console.log(message);
+      optionalParams.length > 0 ? console.log(message, optionalParams) : console.log(message);
     }
   }
 } 

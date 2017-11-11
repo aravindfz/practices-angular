@@ -3,10 +3,8 @@ import { NgModule, CompilerOptions } from '@angular/core';
 import { DxButtonModule } from 'devextreme-angular';
 
 import { AppComponent } from './app.component';
-import { RouterModule } from '@angular/router';
-import { CommonModule, getLocaleId, getLocaleCurrencySymbol } from '@angular/common';
-import { loadMessages } from 'devextreme/localization';
-import { registerLocaleData } from '@angular/common';
+import { RouterModule, Router } from '@angular/router';
+import { CommonModule, getLocaleCurrencySymbol } from '@angular/common';
 import { LOCALE_ID } from '@angular/core';
 import * as fr from '@angular/common/locales/gv'
 import { Logger } from './logger.service';
@@ -30,11 +28,11 @@ import { Logger } from './logger.service';
 })
 export class AppModule {
 
-  constructor() {
-    console.log(fr.default);
+  constructor(private logger: Logger) {
+    this.logger.log(fr.default);
     let a = Object.values(fr.default)[0]
-    console.log('frrrrrrrrrr', fr);
-    console.log(a);
-    console.log(getLocaleCurrencySymbol(navigator.language));
+    this.logger.log('frrrrrrrrrr  ', fr.default);
+    this.logger.log(a);
+    this.logger.log(getLocaleCurrencySymbol(navigator.language));
   }
 }
